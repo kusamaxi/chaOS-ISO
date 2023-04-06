@@ -1,306 +1,612 @@
 # BASE
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Base system
+irootfs/etc/environment
 iptables-nft
+irootfs/etc/environment
 base
+irootfs/etc/environment
 base-devel
+irootfs/etc/environment
 archlinux-keyring
-endeavouros-mirrorlist
-endeavouros-keyring
+irootfs/etc/environment
+chaos-mirrorlist
+irootfs/etc/environment
+chaos-keyring
+irootfs/etc/environment
 cryptsetup
+irootfs/etc/environment
 device-mapper
+irootfs/etc/environment
 diffutils
+irootfs/etc/environment
 dracut
+irootfs/etc/environment
 edk2-shell
+irootfs/etc/environment
 inetutils
+irootfs/etc/environment
 less
+irootfs/etc/environment
 linux
+irootfs/etc/environment
 linux-firmware
+irootfs/etc/environment
 linux-headers
+irootfs/etc/environment
 logrotate
+irootfs/etc/environment
 lsb-release
+irootfs/etc/environment
 man-db
+irootfs/etc/environment
 man-pages
+irootfs/etc/environment
 mdadm
+irootfs/etc/environment
 nano
+irootfs/etc/environment
 nano-syntax-highlighting
+irootfs/etc/environment
 perl
+irootfs/etc/environment
 s-nail
+irootfs/etc/environment
 sudo
+irootfs/etc/environment
 sysfsutils
+irootfs/etc/environment
 systemd-sysvcompat
+irootfs/etc/environment
 texinfo
+irootfs/etc/environment
 which
+irootfs/etc/environment
 vi
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Filesystem
+irootfs/etc/environment
 btrfs-progs
+irootfs/etc/environment
 dosfstools
+irootfs/etc/environment
 e2fsprogs
+irootfs/etc/environment
 exfatprogs
+irootfs/etc/environment
 f2fs-tools
+irootfs/etc/environment
 gvfs
+irootfs/etc/environment
 gvfs-afc
+irootfs/etc/environment
 gvfs-gphoto2
+irootfs/etc/environment
 gvfs-mtp
+irootfs/etc/environment
 gvfs-nfs
+irootfs/etc/environment
 gvfs-smb
+irootfs/etc/environment
 jfsutils
+irootfs/etc/environment
 lvm2
+irootfs/etc/environment
 mtools
+irootfs/etc/environment
 nfs-utils
+irootfs/etc/environment
 nilfs-utils
+irootfs/etc/environment
 ntfs-3g
+irootfs/etc/environment
 reiserfsprogs
+irootfs/etc/environment
 xfsprogs
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Boot
+irootfs/etc/environment
 efibootmgr
+irootfs/etc/environment
 efitools
+irootfs/etc/environment
 
+irootfs/etc/environment
 # HARDWARE
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## CPU
+irootfs/etc/environment
 amd-ucode
+irootfs/etc/environment
 intel-ucode
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## X system
+irootfs/etc/environment
 mesa
+irootfs/etc/environment
 mesa-utils
+irootfs/etc/environment
 nvidia-dkms
+irootfs/etc/environment
 nvidia-utils
+irootfs/etc/environment
 xf86-input-libinput
+irootfs/etc/environment
 xf86-video-amdgpu
+irootfs/etc/environment
 xf86-video-ati
+irootfs/etc/environment
 #xf86-video-intel
+irootfs/etc/environment
 xorg-server
+irootfs/etc/environment
 xorg-xdpyinfo
+irootfs/etc/environment
 xorg-xinit
+irootfs/etc/environment
 xorg-xinput
+irootfs/etc/environment
 xorg-xkill
+irootfs/etc/environment
 xorg-xrandr
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Network hardware
+irootfs/etc/environment
 b43-fwcutter
+irootfs/etc/environment
 broadcom-wl-dkms
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## General hardware
+irootfs/etc/environment
 lsscsi
+irootfs/etc/environment
 sg3_utils
+irootfs/etc/environment
 smartmontools
+irootfs/etc/environment
 usbutils
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Audio hardware
+irootfs/etc/environment
 alsa-firmware
+irootfs/etc/environment
 alsa-plugins
+irootfs/etc/environment
 alsa-utils
+irootfs/etc/environment
 ffmpegthumbnailer
+irootfs/etc/environment
 gst-libav
+irootfs/etc/environment
 gst-plugin-pipewire
+irootfs/etc/environment
 gst-plugins-bad
+irootfs/etc/environment
 gst-plugins-ugly
+irootfs/etc/environment
 libdvdcss
+irootfs/etc/environment
 pavucontrol
+irootfs/etc/environment
 pipewire-alsa
+irootfs/etc/environment
 pipewire-jack
+irootfs/etc/environment
 pipewire-pulse
+irootfs/etc/environment
 rtkit
+irootfs/etc/environment
 sof-firmware
+irootfs/etc/environment
 wireplumber
+irootfs/etc/environment
 
+irootfs/etc/environment
 
+irootfs/etc/environment
 # SOFTWARE
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## General system
+irootfs/etc/environment
 bash-completion
+irootfs/etc/environment
 dmidecode
+irootfs/etc/environment
 dialog
+irootfs/etc/environment
 dmraid
+irootfs/etc/environment
 downgrade
+irootfs/etc/environment
 duf
+irootfs/etc/environment
 fakeroot
+irootfs/etc/environment
 freetype2
+irootfs/etc/environment
 git
+irootfs/etc/environment
 glances
+irootfs/etc/environment
 python-packaging
+irootfs/etc/environment
 gpm
+irootfs/etc/environment
 gptfdisk
+irootfs/etc/environment
 haveged
+irootfs/etc/environment
 hwdetect
+irootfs/etc/environment
 hwinfo
+irootfs/etc/environment
 inxi
+irootfs/etc/environment
 libgsf
+irootfs/etc/environment
 libopenraw
+irootfs/etc/environment
 mlocate
+irootfs/etc/environment
 ntp
+irootfs/etc/environment
 pacman-contrib
+irootfs/etc/environment
 pkgfile
+irootfs/etc/environment
 poppler-glib
+irootfs/etc/environment
 power-profiles-daemon
+irootfs/etc/environment
 rebuild-detector
+irootfs/etc/environment
 reflector
+irootfs/etc/environment
 rsync
+irootfs/etc/environment
 tldr
+irootfs/etc/environment
 unrar
+irootfs/etc/environment
 unzip
+irootfs/etc/environment
 wget
+irootfs/etc/environment
 xdg-user-dirs-gtk
+irootfs/etc/environment
 xdg-utils
+irootfs/etc/environment
 xz
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Network
+irootfs/etc/environment
 bind
+irootfs/etc/environment
 dhclient
+irootfs/etc/environment
 dnsmasq
+irootfs/etc/environment
 ethtool
+irootfs/etc/environment
 iwd
+irootfs/etc/environment
 modemmanager
+irootfs/etc/environment
 nbd
+irootfs/etc/environment
 ndisc6
+irootfs/etc/environment
 net-tools
+irootfs/etc/environment
 netctl
+irootfs/etc/environment
 networkmanager
+irootfs/etc/environment
 networkmanager-openconnect
+irootfs/etc/environment
 networkmanager-openvpn
+irootfs/etc/environment
 nss-mdns
+irootfs/etc/environment
 openconnect
+irootfs/etc/environment
 openvpn
+irootfs/etc/environment
 ppp
+irootfs/etc/environment
 pptpclient
+irootfs/etc/environment
 rp-pppoe
+irootfs/etc/environment
 usb_modeswitch
+irootfs/etc/environment
 vpnc
+irootfs/etc/environment
 whois
+irootfs/etc/environment
 wireless-regdb
+irootfs/etc/environment
 #wireless_tools
+irootfs/etc/environment
 wpa_supplicant
+irootfs/etc/environment
 xl2tpd
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Bluetooth
+irootfs/etc/environment
 bluez
+irootfs/etc/environment
 bluez-utils
+irootfs/etc/environment
 blueman
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Firewall
+irootfs/etc/environment
 firewalld
+irootfs/etc/environment
 python-pyqt5
+irootfs/etc/environment
 python-capng
+irootfs/etc/environment
 
+irootfs/etc/environment
 # ISO
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Live iso specific
+irootfs/etc/environment
 arch-install-scripts
+irootfs/etc/environment
 memtest86+
+irootfs/etc/environment
 mkinitcpio-archiso
+irootfs/etc/environment
 pv
+irootfs/etc/environment
 syslinux
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Live iso tools
+irootfs/etc/environment
 clonezilla
+irootfs/etc/environment
 gpart
+irootfs/etc/environment
 gparted
+irootfs/etc/environment
 grsync
+irootfs/etc/environment
 hdparm
+irootfs/etc/environment
 
+irootfs/etc/environment
 # DESKTOP
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Display manager
+irootfs/etc/environment
 accountsservice
+irootfs/etc/environment
 lightdm-slick-greeter
+irootfs/etc/environment
 eos-lightdm-slick-theme
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Desktop environment
+irootfs/etc/environment
 libwnck3
+irootfs/etc/environment
 network-manager-applet
+irootfs/etc/environment
 thunar-archive-plugin
+irootfs/etc/environment
 thunar-media-tags-plugin
+irootfs/etc/environment
 xfce4
+irootfs/etc/environment
 xfce4-battery-plugin
+irootfs/etc/environment
 xfce4-datetime-plugin
+irootfs/etc/environment
 xfce4-mount-plugin
+irootfs/etc/environment
 xfce4-netload-plugin
+irootfs/etc/environment
 xfce4-notifyd
+irootfs/etc/environment
 xfce4-pulseaudio-plugin
+irootfs/etc/environment
 xfce4-screensaver
+irootfs/etc/environment
 xfce4-screenshooter
+irootfs/etc/environment
 xfce4-taskmanager
+irootfs/etc/environment
 xfce4-wavelan-plugin
+irootfs/etc/environment
 xfce4-weather-plugin
+irootfs/etc/environment
 xfce4-whiskermenu-plugin
+irootfs/etc/environment
 xfce4-xkb-plugin
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Editor
+irootfs/etc/environment
 xed
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Archive
+irootfs/etc/environment
 file-roller
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Image viewer
+irootfs/etc/environment
 ristretto
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Video player
+irootfs/etc/environment
 parole
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Browser
-firefox
+irootfs/etc/environment
+chromium
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## System
+irootfs/etc/environment
 galculator
+irootfs/etc/environment
 meld
+irootfs/etc/environment
 neofetch
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Fonts
+irootfs/etc/environment
 adobe-source-han-sans-cn-fonts
+irootfs/etc/environment
 adobe-source-han-sans-jp-fonts
+irootfs/etc/environment
 adobe-source-han-sans-kr-fonts
+irootfs/etc/environment
 cantarell-fonts
+irootfs/etc/environment
 noto-fonts
+irootfs/etc/environment
 ttf-bitstream-vera
+irootfs/etc/environment
 ttf-dejavu
+irootfs/etc/environment
 ttf-liberation
+irootfs/etc/environment
 ttf-opensans
+irootfs/etc/environment
 
+irootfs/etc/environment
 # ENDEAVOUROS REPO
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## General
+irootfs/etc/environment
 arc-gtk-theme-eos
-endeavouros-theming
-endeavouros-xfce4-terminal-colors
+irootfs/etc/environment
+chaos-theming
+irootfs/etc/environment
+chaos-xfce4-terminal-colors
+irootfs/etc/environment
 eos-apps-info
+irootfs/etc/environment
 eos-hooks
+irootfs/etc/environment
 eos-log-tool
+irootfs/etc/environment
 eos-packagelist
+irootfs/etc/environment
 eos-quickstart
+irootfs/etc/environment
 eos-qogir-icons
+irootfs/etc/environment
 eos-rankmirrors
+irootfs/etc/environment
 eos-update-notifier
+irootfs/etc/environment
 nvidia-inst
+irootfs/etc/environment
 rate-mirrors
+irootfs/etc/environment
 reflector-simple
+irootfs/etc/environment
 welcome
+irootfs/etc/environment
 yay
+irootfs/etc/environment
 
-## Calamares EndeavourOS
+irootfs/etc/environment
+## Calamares chaOS
+irootfs/etc/environment
 calamares
+irootfs/etc/environment
 ckbcomp
+irootfs/etc/environment
 kvantum
+irootfs/etc/environment
 qt5ct
+irootfs/etc/environment
 
+irootfs/etc/environment
 # VM SUPPORT
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Qemu
+irootfs/etc/environment
 qemu-guest-agent
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Spice
+irootfs/etc/environment
 spice-vdagent
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## Virtual-box
+irootfs/etc/environment
 virtualbox-guest-utils
+irootfs/etc/environment
 
+irootfs/etc/environment
 ## VMware
+irootfs/etc/environment
 open-vm-tools
+irootfs/etc/environment
 xf86-input-vmmouse
+irootfs/etc/environment
 xf86-video-vmware
+irootfs/etc/environment
 
+irootfs/etc/environment
 # eos-arm needed packages for chroot into arm device
+irootfs/etc/environment
 qemu-arm-aarch64-static-bin
+irootfs/etc/environment

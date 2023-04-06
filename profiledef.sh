@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="endeavouros"
+iso_name="chaos"
 iso_label="EOS_$(date +%Y%m)"
-iso_publisher="EndeavourOS <https://endeavouros.com>"
-iso_application="EndeavourOS Live/Rescue CD"
+iso_publisher="chaOS <https://expectchaos.com>"
+iso_application="chaOS Live/Rescue CD"
 iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')

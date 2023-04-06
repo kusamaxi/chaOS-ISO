@@ -1,5 +1,5 @@
 removed os-release handling in mkarchiso (16.10.2022):
-https://github.com/endeavouros-team/EndeavourOS-ISO/commit/67a5a371967b57edf21b6e8a93a2720a358571ec
+https://github.com/kusamaxi/chaOS-ISO/commit/67a5a371967b57edf21b6e8a93a2720a358571ec
 
 merged changes from latest mkarchiso on 02.10.2022 
 ```
@@ -15,9 +15,9 @@ clean up of ISO structure:
 added:
 
 ```
- # Pull /usr/lib/endeavouros-release at place to use for prompt info in Live Session
+ # Pull /usr/lib/chaos-release at place to use for prompt info in Live Session
 	mkdir -p "${pacstrap_dir}/usr/lib"
-	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
+	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/chaos-release"
 
 ```
   
@@ -44,9 +44,9 @@ we need package databases present for offline installs and live-session:
 ```
 _cleanup_pacstrap_dir() {
     _msg_info "Cleaning up in pacstrap location..."
-    # Pull /usr/lib/endeavouros-release at place to use for prompt info in Live Session
+    # Pull /usr/lib/chaos-release at place to use for prompt info in Live Session
 	mkdir -p "${pacstrap_dir}/usr/lib"
-	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/endeavouros-release"
+	echo "VERSION=${iso_version}" >> "${pacstrap_dir}/usr/lib/chaos-release"
     # Delete all files in /boot
     # [[ -d "${pacstrap_dir}/boot" ]] && find "${pacstrap_dir}/boot" -mindepth 1 -delete
     # Delete pacman database sync cache files (*.tar.gz)

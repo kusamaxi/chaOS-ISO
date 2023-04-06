@@ -1,4 +1,4 @@
-# EndeavourOS-ISO
+# chaOS-ISO
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2023.svg)]()
 
@@ -14,28 +14,28 @@
 
 ..and our beloved community
 
-This ISO is based on hugely modified Arch-ISO to provide Installation Environment for EndeavourOS.  
-More info at [EndeavourOS-GitHub-Development](https://endeavouros-team.github.io/EndeavourOS-Development/)
+This ISO is based on hugely modified Arch-ISO to provide Installation Environment for chaOS.  
+More info at [chaOS-GitHub-Development](https://kusamaxi.github.io/chaOS-Development/)
 
 
 ## Resources:
 
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/Cassini/cassini_neo_livesession.png" alt="Installer LiveSession" width="600"/>
+<img src="https://raw.githubusercontent.com/kusamaxi/screenshots/master/Cassini/cassini_neo_livesession.png" alt="Installer LiveSession" width="600"/>
 
-- https://endeavouros.com
-- [Getting help at the forum](https://forum.endeavouros.com)
-- [Bug report](https://forum.endeavouros.com/c/Arch-based-related-questions/bug-reports)
+- https://expectchaos.com
+- [Getting help at the forum](https://forum.expectchaos.com)
+- [Bug report](https://forum.expectchaos.com/c/Arch-based-related-questions/bug-reports)
 - [Telegram help-chat](https://t.me/Endeavouros)
-- [Reddit news](https://www.reddit.com/r/EndeavourOS)
+- [Reddit news](https://www.reddit.com/r/chaOS)
 - [Twitter news](https://twitter.com/OsEndeavour)
 
-Our journey wouldn't be made possible without the generosity of our [Open Collective community](https://opencollective.com/endeavouros)!
+Our journey wouldn't be made possible without the generosity of our [Open Collective community](https://opencollective.com/chaos)!
 
 
 ### Development source
 
-- [EndeavourOS-ISO source](https://github.com/endeavouros-team/EndeavourOS-ISO) (Live environment with XFCE4-Desktop)
-- [Calamares {EndeavourOS fork}](https://github.com/endeavouros-team/calamares) (installer framework)
+- [chaOS-ISO source](https://github.com/kusamaxi/chaOS-ISO) (Live environment with XFCE4-Desktop)
+- [Calamares {chaOS fork}](https://github.com/kusamaxi/calamares) (installer framework)
 
 
 ### Base source
@@ -48,26 +48,26 @@ Our journey wouldn't be made possible without the generosity of our [Open Collec
 # Boot options
 
 Systemd-boot for UEFI systems:  
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/Apollo/apollo-systemdboot.png" alt="drawing" width="600"/>
+<img src="https://raw.githubusercontent.com/kusamaxi/screenshots/master/Apollo/apollo-systemdboot.png" alt="drawing" width="600"/>
 
 Bios-boot (syslinux) for legacy systems:  
-<img src="https://raw.githubusercontent.com/endeavouros-team/screenshots/master/Apollo/apollo-syslinux.png" alt="drawing" width="600"/>
+<img src="https://raw.githubusercontent.com/kusamaxi/screenshots/master/Apollo/apollo-syslinux.png" alt="drawing" width="600"/>
 
 
 
 # How to build ISO
 
-You need to use an installed EndeavourOS system or any archbased system with EndeavourOS [repository](https://github.com/endeavouros-team/mirrors) enabled.
+You need to use an installed chaOS system or any archbased system with chaOS [repository](https://github.com/kusamaxi/mirrors) enabled.
 
-As the installer packages and needed dependencies will get installed from EndeavourOS repository.
+As the installer packages and needed dependencies will get installed from chaOS repository.
 
 General information: 
 
-https://endeavouros-team.github.io/EndeavourOS-Development/
+https://kusamaxi.github.io/chaOS-Development/
 
 And read the changelog before starting to know about latest changes:
 
-https://github.com/endeavouros-team/EndeavourOS-ISO/blob/main/CHANGELOG.md
+https://github.com/kusamaxi/chaOS-ISO/blob/main/CHANGELOG.md
 
 ### Install build dependencies
 
@@ -81,23 +81,23 @@ Recommended to reboot after this changes.
 ##### 1. Prepare
 
 If you want the last release state to rebuild ISO you need to use specific tag tarball.
-https://github.com/endeavouros-team/EndeavourOS-ISO/tags
+https://github.com/kusamaxi/chaOS-ISO/tags
 
 If not you will use latest "unstable" development state.
 
 use last stable release (exemple for 22.12.2 Cassini nova Release)
 
 ```
-wget https://github.com/endeavouros-team/EndeavourOS-ISO/archive/refs/tags/22.12.2.tar.gz
+wget https://github.com/kusamaxi/chaOS-ISO/archive/refs/tags/22.12.2.tar.gz
 tar -xvf 22.12.2.tar.gz
-cd "EndeavourOS-ISO-22.12.2"
+cd "chaOS-ISO-22.12.2"
 ./prepare.sh
 ```
 ### Or use latest **unstable** debvelopment (git) by clone this repo:
 
 ```
-git clone https://github.com/endeavouros-team/EndeavourOS-ISO.git
-cd EndeavourOS-ISO
+git clone https://github.com/kusamaxi/chaOS-ISO.git
+cd chaOS-ISO
 ./prepare.sh
 ```
 

@@ -1,11 +1,11 @@
-# Maintainer: EndeavourOS <info@endeavouros.com>
+# Maintainer: chaOS <info@expectchaos.com>
 
-pkgname='endeavouros-skel-liveuser'
+pkgname='chaos-skel-liveuser'
 pkgver=1.0
 pkgrel=1
-pkgdesc='Liveuser specific skel setup for EndeavourOS'
+pkgdesc='Liveuser specific skel setup for chaOS'
 arch=('any')
-url='https://www.endeavouros.com'
+url='https://www.expectchaos.com'
 license=('GPL3')
 source=()
 
