@@ -278,5 +278,21 @@ open-vm-tools
 xf86-input-vmmouse
 xf86-video-vmware
 
+# RUST replacement tools
+bandwhich # alias netstat
+bat # alias cat
+bottom # alias htop
+dust # alias du
+exa # alias ls
+fd # alias find
+hexyl # alias hexdump
+lf # alias x / ranger
+procs # alias ps
+starship # alias prompt
+tokei
+
+# TODO: PAM modules - passwordless usage
+
+
 # eos-arm needed packages for chroot into arm device
 qemu-arm-aarch64-static-bin
