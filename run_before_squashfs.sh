@@ -1,126 +1,120 @@
 #!/usr/bin/env bash
 
-# Made by Fernando "maroto"
-# Run anything in the filesystem right before being "mksquashed"
-# ISO-NEXT specific cleanup removals and additions (08-2021 + 10-2021) @killajoe and @manuel
-# refining and changes november 2021 @killajoe and @manuel
+set -euo pipefail
 
-script_path=$(readlink -f "${0%/*}")
+script_path="$(readlink -f "${0%/*}")"
 work_dir="work"
 
-# Adapted from AIS. An excellent bit of code!
-# all pathes must be in quotation marks "path/to/file/or/folder" for now.
+log() {
+	echo "[$(date +"%Y-%m-%d %H:%M:%S")] $*"
+}
 
 arch_chroot() {
 	arch-chroot "${script_path}/${work_dir}/x86_64/airootfs" /bin/bash -c "${1}"
 }
 
-do_merge() {
+enable_services() {
+	local services=(NetworkManager.service systemd-timesyncd.service bluetooth.service firewalld.service
+		vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service intel.service)
+	for service in "${services[@]}"; do
+		arch_chroot "systemctl enable ${service}"
+	done
+	arch_chroot "systemctl set-default multi-user.target"
+}
 
+install_packages() {
+	local package_list=("grub" "eos-dracut" "kernel-install-for-dracut" "refind" "os-prober" "xf86-video-intel")
+	arch_chroot "pacman -Sw --noconfirm --cachedir /usr/share/packages ${package_list[*]}"
+}
+
+do_merge() {
 	arch_chroot "$(
 		cat <<EOF
+set -euo pipefail
+log() {
+    echo "[$(date +"%Y-%m-%d %H:%M:%S")] \$*"
+}
 
-echo "##############################"
-echo "# start chrooted commandlist #"
-echo "##############################"
-
+log "Starting chrooted commandlist"
 cd "/root"
 
-# Init & Populate keys
+log "Initializing and populating keys"
 pacman-key --init
 pacman-key --populate archlinux chaos
 pacman -Syy
 
-# Install liveuser skel (in case of conflicts use overwrite)
+log "Installing liveuser skel"
 pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/chaos-skel-liveuser/"*".pkg.tar.zst"
 
-# Prepare livesession settings and user
-sed -i 's/#\(en_US\.UTF-8\)/\1/' "/etc/locale.gen"
+log "Preparing livesession settings and user"
+sed -i 's/#\\(en_US\\.UTF-8\\)/\\1/' "/etc/locale.gen"
 locale-gen
 ln -sf "/usr/share/zoneinfo/UTC" "/etc/localtime"
 
-# Set root permission and shell
+log "Setting root permission and shell"
 usermod -s /usr/bin/bash root
 
-# Create liveuser
+log "Creating liveuser"
 useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /bin/bash liveuser
 
-# Remove liveuser skel to then install user skel
+log "Removing liveuser skel"
 pacman -Rns --noconfirm -- "chaos-skel-liveuser"
 rm -rf "/root/chaos-skel-liveuser"
 
-# Root qt style for Calamares
-mkdir "/root/.config"
+log "Configuring root qt style for Calamares"
+mkdir -p "/root/.config"
 cp -Rf "/home/liveuser/.config/"{"Kvantum","qt5ct"} "/root/.config/"
 
-# Add builddate to motd:
+log "Adding builddate to motd"
 cat "/usr/lib/chaos-release" >> "/etc/motd"
 echo "------------------" >> "/etc/motd"
 
-# Enable systemd services
-systemctl enable NetworkManager.service systemd-timesyncd.service bluetooth.service firewalld.service
-systemctl enable vboxservice.service vmtoolsd.service vmware-vmblock-fuse.service
-systemctl set-default multi-user.target
-systemctl enable intel.service
+log "Enabling systemd services"
+enable_services
 
-# Install locally builded packages on ISO (place packages under airootfs/root/packages)
+log "Installing locally built packages on ISO"
 pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
 rm -rf "/root/packages/"
 
-# Set wallpaper for live-session and original for installed system
+log "Setting wallpaper for live-session and original for installed system"
 mv "chaos-wallpaper.png" "/etc/calamares/files/chaos-wallpaper.png"
 mv "/root/livewall.png" "/usr/share/chaos/backgrounds/chaos-wallpaper.png"
 chmod 644 "/usr/share/chaos/backgrounds/"*".png"
-#test to use the new xfce4-desktop.xml file
-#rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
-#ln -s "/usr/share/chaos/backgrounds/chaos-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
 
-
-# TEMPORARY CUSTOM FIXES
-
-# Fix for getting bash configs installed
+log "Applying temporary custom fixes"
 cp -af "/home/liveuser/"{".bashrc",".bash_profile"} "/etc/skel/"
 
-# Move blacklisting nouveau out of ISO (copy back to target for offline installs)
+log "Moving blacklisting nouveau out of ISO"
 mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
 mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
 
-# Get extra drivers!
+log "Getting extra drivers"
 mkdir "/opt/extra-drivers"
 pacman -Syy
 pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
 
-# install packages
-mkdir -p "/usr/share/packages"
-pacman -Sw --noconfirm --cachedir "/usr/share/packages" grub eos-dracut kernel-install-for-dracut refind os-prober xf86-video-intel
+log "Installing packages"
+install_packages
 
-# Clean pacman log and package cache
+log "Cleaning pacman log and package cache"
 rm "/var/log/pacman.log"
-# pacman -Scc seem to fail so:
 rm -rf "/var/cache/pacman/pkg/"
 
-#calamares BUG https://github.com/calamares/calamares/issues/2075
+log "Applying calamares bug fix"
 rm -rf /home/build
 
-#create package versions file
-pacman -Qs | grep "/calamares " | cut -c7- > iso_package_versions
-pacman -Qs | grep "/chromium " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/linux " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/mesa " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/xorg-server " | cut -c7- >> iso_package_versions
-pacman -Qs | grep "/nvidia-dkms " | cut -c7- >> iso_package_versions
+log "Creating package versions file"
+local package_list=("calamares" "chromium" "linux" "mesa" "xorg-server" "nvidia-dkms")
+for package in "${package_list[@]}"; do
+    pacman -Qs | grep "/${package} " | cut -c7- >> iso_package_versions
+done
 mv "iso_package_versions" "/home/liveuser/"
 
-echo "############################"
-echo "# end chrooted commandlist #"
-echo "############################"
-
+log "Ending chrooted commandlist"
 EOF
 	)"
+
 }
 
-#################################
-########## STARTS HERE ##########
-#################################
-
+log "Starting commandlist"
 do_merge
