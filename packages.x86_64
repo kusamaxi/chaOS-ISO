@@ -2,6 +2,7 @@
 
 ## Base system
 iptables-nft
+alacritty
 base
 base-devel
 archlinux-keyring
@@ -22,8 +23,7 @@ lsb-release
 man-db
 man-pages
 mdadm
-nano
-nano-syntax-highlighting
+micro
 perl
 s-nail
 sudo
@@ -31,7 +31,7 @@ sysfsutils
 systemd-sysvcompat
 texinfo
 which
-vi
+neovim
 
 ## Filesystem
 btrfs-progs
