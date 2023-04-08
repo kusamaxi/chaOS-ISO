@@ -5,4 +5,5 @@
 #
 QT_QPA_PLATFORMTHEME=qt5ct
 BROWSER=chromium
-EDITOR=nano
+EDITOR=nvim
+TERM=xterm-256color
