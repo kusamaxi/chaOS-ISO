@@ -1,12 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-log() {
-	echo "$(date +"%Y-%m-%d %H:%M:%S") - $1"
-}
-
 if [ "$#" -ne 2 ]; then
 	echo "Usage: $0 TORRENT_URL SIGNING_KEY_FINGERPRINT"
+	echo "Example: $0 https://iso.expectchaos.com/chaos-v0.0.1-x86.iso.torrent 0x46181433FBB75451"
 	exit 1
 fi
 
@@ -17,6 +14,31 @@ SIGNING_KEY_FINGERPRINT="$2"
 ISO_FILE="${TORRENT_URL%%.torrent}.iso"
 SHA512SUM_FILE="${TORRENT_URL%%.torrent}.iso.sha512sum"
 SIG_FILE="${TORRENT_URL%%.torrent}.iso.sig"
+
+log() {
+	echo "$(date +"%Y-%m-%d %H:%M:%S") - $1"
+}
+
+install_dependency() {
+	dependency_name=$1
+	if ! command -v ${dependency_name} &>/dev/null; then
+		log "${dependency_name} not found, trying to install it"
+		if command -v apt-get &>/dev/null; then
+			sudo apt-get install -y ${dependency_name}
+		elif command -v dnf &>/dev/null; then
+			sudo dnf install -y ${dependency_name}
+		elif command -v pacman &>/dev/null; then
+			sudo pacman -S --noconfirm ${dependency_name}
+		else
+			log "Package manager not supported. Please install ${dependency_name} manually."
+			exit 1
+		fi
+	fi
+}
+
+log "Checking for necessary dependency tools"
+install_dependency "wget"
+install_dependency "aria2c"
 
 log "Downloading the torrent, signature, and sha512sum files"
 wget -q --show-progress "${TORRENT_URL}"
