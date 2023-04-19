@@ -1,0 +1,92 @@
+# Chaos themed Alacritty color scheme
+colors:
+  # Default colors
+  primary:
+    background: '0x000000' # Black
+    foreground: '0xF8229B' # Bright Pink
+  cursor:
+    text: '0x000000' # Black
+    cursor: '0xe6007a' # Pink
+
+  # Normal colors
+  normal:
+    black:   '0x000000' # Black
+    blue:     '0xe6007a' # Pink
+    green:   '0x56F39A' # Green
+    yellow:  '0xD3FF33' # Lime
+    magenta:    '0x0077ff' # Blue
+    red: '0x552BBF' # Purple
+    cyan:    '0x00ffe1' # Cyan
+    white:   '0xFFFFFF' # White
+
+  # Bright colors
+  bright:
+    black:   '0x555555' # Gray
+    blue:     '0xe6007a' # Pink
+    green:   '0x56F39A' # Green
+    yellow:  '0xD3FF33' # Lime
+    magenta:    '0x00B2FF' # Light Blue
+    red: '0x552BBF' # Purple
+    cyan:    '0x00ffe1' # Cyan
+    white:   '0xFFFFFF' # White
+
+font:
+  # The normal (roman) font face to use.
+  normal:
+    family: "Ubuntu Mono Nerd Font"
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: "Ubuntu Mono Nerd Font"
+    style: Bold 
+
+  size: 12.0
+
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+
+## Set environment variables
+env:
+  TERM: xterm-256color
+
+## Terminal window settings
+window:
+  dimensions:
+    columns: 84
+    lines: 22
+
+  padding:
+    x: 4
+    y: 4
+
+  opacity: 1
+  decorations: full
+  startup_mode: Windowed
+  dynamic_title: true
+  dynamic_padding: true
+
+## scrolling
+  history: 10000
+  multiplier: 3
+
+## Cursor
+cursor:
+  style:
+    shape: Block
+    blinking: on
+
+  unfocused_hollow: false
+
+## Live config reload
+live_config_reload: true
+
+## zsh as shell
+shell:
+  program: /usr/bin/zsh
+  args:
+    - --login
